@@ -1,0 +1,31 @@
+tasks:
+  - name: ScrapeArticlesTask
+    description: Scrape articles and gather initial data
+    agent: ResearcherAgent
+    tools:
+      - WebScraper
+    expected_output: List of articles with titles, links, and summaries
+    next: AnalyzeArticlesTask
+
+  - name: AnalyzeArticlesTask
+    description: Analyze articles to find new features/products
+    agent: ResearcherAgent
+    expected_output: Compiled list of features/products in a bulleted list
+    next: CompileFeatureListTask
+
+  - name: CompileFeatureListTask
+    description: Compile the list of features/products into a detailed bulleted list
+    agent: ResearcherAgent
+    expected_output: Detailed bulleted list of AI/ML features and products
+    next: HandoffToWriterTask
+
+  - name: HandoffToWriterTask
+    description: Hand off the compiled list to the WriterAgent
+    agent: ResearcherAgent
+    expected_output: Notification to WriterAgent with compiled data
+    next: WriteContentTask
+
+  - name: WriteContentTask
+    description: Write detailed, engaging content based on the compiled list
+    agent: WriterAgent
+    expected_output: Engaging article or report on new AI/ML features and products

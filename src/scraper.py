@@ -17,7 +17,7 @@ def scrape_articles():
 
         link = title_tag['href'] if title_tag else ''
         if link.startswith('.'):
-            link = f"https://news.google.com{link[1:]}"  # Complete the relative URL
+            link = f"https://news.google.com{link[1:]}" 
 
         summary_tag = item.find('div', class_='IL9Cne')
         summary = summary_tag.text if summary_tag else 'No summary available'
