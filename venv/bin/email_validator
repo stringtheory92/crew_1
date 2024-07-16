@@ -1,4 +1,4 @@
-#!/Users/adamkabak/Development/agentic/crew_1/venv/bin/python3.11
+#!/Users/adamkabak/Development/agentic/crew_1/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
