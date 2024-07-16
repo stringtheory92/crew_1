@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 
-def scrape_articles():
+def scrape_article_titles_links():
     url = 'https://news.google.com/search?q=artificial+intelligence&hl=en-US&gl=US&ceid=US:en'
     headers = {}
     response = requests.get(url, headers=headers)
@@ -42,6 +42,6 @@ def save_to_db(articles):
     conn.close()
 
 if __name__ == "__main__":
-    articles = scrape_articles()
+    articles = scrape_article_titles_links()
     save_to_db(articles)
     
